@@ -38,6 +38,10 @@ public class Complex {
         out.set(a * other.a - b * other.b, a * other.b + b * other.a);
     }
 
+    public void times(double x, Complex out) {
+        out.set(a*x,b*x);
+    }
+
     public double squaredMag(){
         return a * a + b * b;
     }
