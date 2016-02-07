@@ -22,15 +22,8 @@ public class Complex {
         b = imaginary;
     }
 
-
-    @Override
-    public String toString() {
-        return String.format("%.2f + %.2fi", a, b);
-    }
-
     public void set(Complex other) {
-        a = other.a;
-        b = other.b;
+        set(other.a,other.b);
     }
 
     public void plus(Complex other, Complex out) {
@@ -84,6 +77,12 @@ public class Complex {
         final Complex other = (Complex) obj;
         return closeEnough(a, other.a) && closeEnough(b, other.b);
     }
+
+    @Override
+    public String toString() {
+        return String.format("%.2f + %.2fi", a, b);
+    }
+
 
     private boolean closeEnough(double a, double b) {
         return Math.abs(a - b) < 0.0000001;
